@@ -25,7 +25,7 @@ This project is developed as part of the backend internship assignment at Worko.
 1. **Clone the repository:**
 
 ```
-git clone <repository-url>
+git clone https://github.com/PutluruAravindaReddy/worko-assign.git
 cd project-directory
 ```
 
