@@ -16,7 +16,7 @@ module.exports.signup=async(req,res)=>{
             return next(err);
         }
         req.flash("success","Welcome to Wanderlust");
-        res.redirect("/listings");
+        res.redirect("/worko/user");
     })
     }catch(e){
         req.flash("error",e.message);
@@ -30,8 +30,8 @@ module.exports.renderLoginForm=(req,res)=>{
 
 
 module.exports.login=async(req,res)=>{
-    req.flash("success","Welcome back to Wanderlust");
-    let redirectUrl=res.locals.redirectUrl || "/listings";
+    req.flash("success","Welcome back to Worko");
+    let redirectUrl=res.locals.redirectUrl || "/worko/user";
     res.redirect(redirectUrl);
 };
 
@@ -42,6 +42,6 @@ module.exports.logout=(req,res,next)=>{
             next(err);
         }
         req.flash("success","You are logged out!");
-        res.redirect("/listings");
+        res.redirect("/worko/user");
     })
 };

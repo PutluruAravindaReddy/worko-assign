@@ -1,80 +1,85 @@
 <% layout("/layouts/boilerplate") %>
 <style>
   body {
-    background-color: #f8f9fa;
+    background-color: #f0f0f0; 
   }
-  .register-ar-form {
+  .register-form {
     max-width: 400px;
     margin: auto;
     padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    background-color: #fff; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   }
-  .register-ar-form h2 {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .form-ar-control {
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 0 10px 0;
+  .register-form h2 {
     margin-bottom: 20px;
-    box-shadow: none;
+    text-align: center;
+    color: #333; 
   }
-  .btn-ar-register {
+  .form-control {
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: none;
+    border: 1px solid #ccc; 
+  }
+  .btn-register {
     border-radius: 12px;
-    padding: 8px 20px;
-    margin: 10px 0 10px 0;
+    padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    background-color: #5cb85c; /* Green color */
+    background-color: #007bff; 
     border: none;
-    color: #fff;
+    color: #fff; 
   }
-  .btn-ar-register:hover {
-    background-color: #4cae4c; /* Darker green color on hover */
+  .btn-register:hover {
+    background-color: #0056b3;
   }
-  .form-ar-check-label {
+  .form-check-label {
     font-weight: normal;
+    color: #555; 
   }
-  .border-r {
-    border-radius: 20px;
+  .text-login {
+    text-align: center;
+    color: #777; 
+  }
+  .text-login a {
+    color: #007bff;
   }
   .invalid-feedback {
     display: none;
-    color: #dc3545; /* Red color for error message */
+    color: #dc3545; 
   }
 </style>
 
 <div class="container my-5">
-  <div class="register-ar-form border-r">
+  <div class="register-form">
     <h2>Register</h2>
     <form action="/signup" method="post" id="registerForm" class="needs-validation" novalidate>
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control form-ar-control" name="username" id="username" placeholder="Enter your username" required>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control form-ar-control" name="email" id="email" placeholder="Enter your email" required>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control form-ar-control" name="password" id="password" placeholder="Enter your password" required>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
       </div>
       <div class="form-group">
         <label for="confirm-password">Confirm Password</label>
-        <input type="password" class="form-control form-ar-control" name="confirm-password" id="confirm-password" placeholder="Confirm your password" required>
+        <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder="Confirm your password" required>
         <div class="invalid-feedback" id="passwordError">
           Passwords do not match.
         </div>
       </div>
-      <button type="submit" class="btn btn-success btn-ar-register btn-block">Register</button>
+      <button type="submit" class="btn btn-register btn-block">Register</button>
     </form>
     <hr>
-    <p class="text-center">Already have an account? <a href="/login">Login here</a></p>
+    <p class="text-login">Already have an account? <a href="/login">Login here</a></p>
   </div>
 </div>
 

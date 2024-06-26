@@ -1,0 +1,40 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="d-flex justify-content-center my-2">
+        <div class="card" style="width: 20rem;">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="">
+                    <img src="<%= worko.image.url %>" alt="worko-image">
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Name:</b>
+                    <%= worko.name %>
+                </li>
+                <li class="list-group-item"><b>Owner:</b>
+                    <%= worko.owner.username %>
+                </li>
+                <li class="list-group-item"><b>Email:</b>
+                    <%= worko.email %>
+                </li>
+                <li class="list-group-item"><b>Age:</b>
+                    <%= worko.age %>
+                </li>
+                <li class="list-group-item"><b>City:</b>
+                    <%= worko.city %>
+                </li>
+                <li class="list-group-item"><b>Zipcode:</b>
+                    <%= worko.zipcode %>
+                </li>
+            </ul>
+            <div class="card-body m-2">
+                <% if(currUser && worko.owner._id.equals(currUser._id)) { %>
+                    <a href="/worko/user/<%= worko._id %>/edit" class="btn btn-primary">Edit</a>
+                    <form method="post" action="/worko/user/<%= worko._id %>?_method=DELETE"
+                        style="display: inline-block;">
+                        <button type="submit" class="btn border">Delete</button>
+                    </form>
+                    <% } %>
+            </div>
+        </div>
+    </div>

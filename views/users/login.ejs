@@ -1,89 +1,73 @@
 <% layout("/layouts/boilerplate")%>
 <style>
   body {
-    background-color: #f8f9fa;
+    background-color: #f0f0f0; /* Light gray background */
   }
-  .login-ar-form {
+  .login-form {
     max-width: 400px;
     margin: auto;
     padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px;
+    background-color: #fff; /* White background */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
-  .login-ar-form h2 {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .form-ar-control {
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 0 10px 0;
+  .login-form h2 {
     margin-bottom: 20px;
-    box-shadow: none;
+    text-align: center;
+    color: #333; /* Dark gray text */
   }
-  .btn-ar-login {
+  .form-control {
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: none;
+    border: 1px solid #ccc; /* Light border */
+  }
+  .btn-login {
     border-radius: 12px;
-    padding: 8px 20px;
-    margin: 10px 0 10px 0;
+    padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    background-color: #fe424d;
+    background-color: #4CAF50; /* Green background */
     border: none;
-    color: #fff;
+    color: #fff; /* White text */
   }
-  .btn-ar-login:hover {
-    background-color: #d9373c;
+  .btn-login:hover {
+    background-color: #45a049; /* Darker green on hover */
   }
-  .form-ar-check-label {
+  .form-check-label {
     font-weight: normal;
+    color: #555; /* Dark gray text for checkbox */
   }
-  .border-r{
-    border-radius: 20px;
+  .text-register {
+    text-align: center;
+    color: #777; /* Light gray text for register link */
+  }
+  .text-register a {
+    color: #4CAF50; /* Green register link */
   }
 </style>
 
-<div class="container my-5 ">
-  <div class="login-ar-form border-r">
+<div class="container my-5">
+  <div class="login-form">
     <h2>Login</h2>
     <form action="/login" method="post" class="needs-validation" novalidate>
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control form-ar-control" name="username" id="username" placeholder="Enter your username" required>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control form-ar-control" name="password" id="password" placeholder="Enter your password" required>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
       </div>
       <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input form-ar-check-input" id="remember">
-        <label class="form-check-label form-ar-check-label" for="remember">Remember me</label>
+        <input type="checkbox" class="form-check-input" id="remember">
+        <label class="form-check-label" for="remember">Remember me</label>
       </div>
-      <button type="submit" class="btn btn-primary btn-ar-login btn-block">Login</button>
+      <button type="submit" class="btn btn-login btn-block">Login</button>
     </form>
     <hr>
-    <p class="text-center">Don't have an account? <a href="/signup">Register here</a></p>
+    <p class="text-register">Don't have an account? <a href="/signup">Register here</a></p>
   </div>
 </div>
-
-<!-- Bootstrap JS (if needed) -->
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> -->
-    <!-- <div class="row">
-        <h1 class="col-6 offset-3">Login</h1>
-        <div class="col-6 offset-3">
-            <form action="/login" method="post" class="needs-validation" novalidate>
-                <div>
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" placeholder="Username" required class="form-control" />
-                </div>
-                <div>
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" placeholder="Password" required class="form-control" />
-                </div>
-                <button type="submit" class="btn btn-success">Login</button>
-            </form>
-
-        </div>
-    </div> -->
- 

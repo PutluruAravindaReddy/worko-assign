@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h2 class="pt-3 pb-3">Edit Your Worko</h2>
+                <form action="/worko/user/<%= worko._id %>?_method=PUT" method="post" enctype="multipart/form-data"
+                    novalidate class="needs-validation">
+                    <div class="form-row d-flex">
+                        <div class="form-group col-md-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" name="worko[name]" placeholder="Enter Name" value="<%= worko.name %>"
+                                class="form-control" required>
+                            <div class="valid-feedback">Name looks good</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="text" name="worko[age]" placeholder="Enter Age" value="<%= worko.age %>"
+                                class="form-control">
+                            <div class="valid-feedback">Age looks good</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="worko[email]" required placeholder="Enter Email"
+                            value="<%= worko.email %>" class="form-control">
+                        <div class="valid-feedback">Email looks good</div>
+                    </div>
+                    <div class="form-row d-flex">
+                        <div class="form-group col-md-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" name="worko[city]" placeholder="Enter City" value="<%= worko.city %>"
+                                class="form-control">
+                            <div class="valid-feedback">City looks good</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="zipcode" class="form-label">Zipcode</label>
+                            <input type="number" name="worko[zipcode]" required placeholder="Enter Zipcode"
+                                value="<%= worko.zipcode %>" class="form-control">
+                            <div class="valid-feedback">Zipcode looks good</div>
+                        </div>
+                    </div>
+                    <div>
+                        Original Worko Image<br>
+                        <img src="<%= originalImageUrl %>" alt="">
+                    </div>
+                    <div>
+                        <label for="image" class="form-label">Upload New Image</label>
+                        <input type="file" name="worko[image]" placeholder="Enter Image URL/Link" class="form-control">
+                        <div class="invalid-feedback">Please enter a valid link</div>
+                    </div>
+                    <button type="submit" class="btn btn-dark mt-3 mb-3">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
